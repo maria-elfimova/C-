@@ -1,0 +1,14 @@
+*.exe
+*.ilk
+*.pdb
+*.suo
+*.log
+*.obj
+*.pch
+*.tlog
+*.idb
+*.ipch
+Dop1/Ex1/ReadMe.txt
+Dop1/Ex2/ReadMe.txt
+Dop1/Ex4/ReadMe.txt
+*.txt
