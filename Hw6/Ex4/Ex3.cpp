@@ -5,7 +5,7 @@
 #include <string>
 using namespace std;
 
-// Функция принимает строку и массив двух целых чисел, в который записывает номера мест первого и последнего пробела в стоке. 
+//The function takes a string and an integer array of two, and writes the seat numbers of the first and the last gap in the string.
 void fistLastSpace(const string str, int* sp)
 {
 	*sp = 0;
@@ -13,7 +13,7 @@ void fistLastSpace(const string str, int* sp)
 
 	for (; sp[0] < str.length(), str[sp[0]] != ' '; sp[0]++) {}
 	for (; sp[1] > 0, str[sp[1]] != ' '; sp[1]--) {}
-	//return sp;
+
 }
 
 int _tmain(int argc, _TCHAR* argv[])

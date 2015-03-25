@@ -14,6 +14,7 @@
     <ProjectGuid>{1B3C26CE-33E8-41A0-A942-8E84AB69D69E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Ex4</RootNamespace>
+    <ProjectName>Ex3</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -83,7 +84,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Ex4.cpp" />
+    <ClCompile Include="Ex3.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
