@@ -10,7 +10,7 @@ public:
 	complex(double re_ = 0, double im_ = 0) :
 		re(re_), im(im_)
 	{}
-	friend complex operator*=(complex c1, complex c2);
+	friend complex& operator*=(complex c1, complex c2);
 	friend complex operator*(complex c1, complex c2);
 };
 
@@ -22,7 +22,7 @@ complex operator*(complex c1, complex c2)
 	return res;
 }
 
-complex operator*=(complex c1, complex c2)
+complex& operator*=(complex c1, complex c2)
 {
 	return operator*(c1, c2);
 }

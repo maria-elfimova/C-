@@ -6,29 +6,34 @@
 
 int getNearest(const int* a, int n, int x)
 {
-	const int* p = a;
-	int i = n / 2;
-	for (int k = 4; i < sqrt(float(n)) + 1; k + 2)
-	{
-		if (p[i] < x)
-			i += n / k;
-		else
-		if (p[i] > x)
-			i -= n / k;
-		else return p[k];
-	}
-		if ((p[i] - x) < (x - p[i - 1]))
-			return p[i];
-		return p[i - 1];
+	if (x < *a)
+		return *a;
+	if (x > a[n - 1])
+		return a[n - 1];
 
+	int from = 0;
+	int to = n - 1;
+	while (to - from != 1)
+	{
+		if (a[(to - from) / 2] > x)
+			to -= (to - from) / 2;
+		if (a[(to - from) / 2] < x)
+			from += (to - from) / 2;
+	}
+	if (abs(a[from] - x) < abs(a[from - 1] - x))
+		return a[from];
+	else
+		return a[from - 1];
 }
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	const int a[] {1, 3, 7, 10, 20};
-	auto n = getNearest(a, 5, 13);
-	// Найти в массиве а, состоящем из 5 чисел, число, 
-	// ближайшее к 13.
+	//const int a[] {1, 3, 7, 10, 20};
+	//auto n = getNearest(a, 5, 13);
+
+	const int a[] {1, 3, 7, 10, 20, 30, 50, 100, 101};
+	auto n = getNearest(a, 9, 54);
+
 	return 0;
 }
 
