@@ -17,8 +17,11 @@ int getNearest(const int* a, int n, int x)
 	{
 		if (a[(to - from) / 2] > x)
 			to -= (to - from) / 2;
+		else
 		if (a[(to - from) / 2] < x)
 			from += (to - from) / 2;
+		else
+			return a[(to - from)/ 2];
 	}
 	if (abs(a[from] - x) < abs(a[from - 1] - x))
 		return a[from];
@@ -31,8 +34,11 @@ int _tmain(int argc, _TCHAR* argv[])
 	//const int a[] {1, 3, 7, 10, 20};
 	//auto n = getNearest(a, 5, 13);
 
-	const int a[] {1, 3, 7, 10, 20, 30, 50, 100, 101};
-	auto n = getNearest(a, 9, 54);
+	/*const int a[] {1, 3, 7, 10, 20, 30, 50, 100, 101};
+	auto n = getNearest(a, 9, 54);*/
+
+	const int a[] = { 1, 3, 7, 10, 20 };
+	auto n = getNearest(a, 5, 7);
 
 	return 0;
 }

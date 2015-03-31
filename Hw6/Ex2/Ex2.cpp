@@ -56,7 +56,6 @@ public:
 		{
 			if (e)
 				return true;
-			return false;
 		}
 		return false;
 	}
