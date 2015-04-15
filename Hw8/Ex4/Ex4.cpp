@@ -8,7 +8,7 @@
 
 using namespace std;
 
-template <class T> void print(T x)
+template <class T> void print(T &x)
 {
 	for (auto p = x.begin(); p != x.end(); p++) 
 	{
@@ -17,7 +17,7 @@ template <class T> void print(T x)
 	cout << "\n";
 }
 
-template <class T> void print2(T x)
+template <class T> void print2(T &x)
 {
 	for (int i : x)
 	{
