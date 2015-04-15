@@ -5,28 +5,32 @@
 
 class abc
 {
-private:
-	static int n;
 public:
+	static int n;
 	abc()
 	{
 		n++;
 	}
-	int num()
-	{
-		return n;
+
+	abc(const abc& a) {
+		n++;
 	}
 	~abc()
 	{
 		n--;
 	}
 };
+int abc::n = 0;
 
-int _tmain(int argc, _TCHAR* argv[])
+int main()
 {
 	abc *a = new abc();
 	abc *b = new abc();
-	//int n = b->num();
+	
+	int n = abc::n;
+
+	delete a;
+	n = abc::n;
 
 	return 0;
 }

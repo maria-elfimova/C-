@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include <string>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -12,12 +13,13 @@ struct note
 public:
 	int salary;
 	string name;
+	note() {}
 	note(int s, string n) : salary(s), name(n) {}
 };
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	note *v[100];
+	vector<note> v(100);
 	int count = 0;
 	while (true)
 	{
@@ -28,21 +30,21 @@ int _tmain(int argc, _TCHAR* argv[])
 			break;
 		cin >> salary;
 		note *elem = new note(salary, name);
-		v[count] = elem;
+		v[count] = *elem;
 		count++;
 	}
 
 	int maxSal = 0;
 	for (int i = 0; i < count; i++)
 	{
-		if (v[i]->salary > maxSal)
-			maxSal = v[i]->salary;
+		if (v[i].salary > maxSal)
+			maxSal = v[i].salary;
 	}
 
 	for (int i = 0; i < count; i++)
 	{
-		if (v[i]->salary == maxSal)
-			cout << v[i]->name << "\n";
+		if (v[i].salary == maxSal)
+			cout << v[i].name << "\n";
 	}
 
 	system("pause");
