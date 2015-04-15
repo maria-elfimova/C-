@@ -23,11 +23,18 @@ int _tmain(int argc, _TCHAR* argv[])
 		*p = temp;
 	}
 
-	for (p--; p != v.begin(); p--)
+	if (p == v.begin())
 	{
-		cout << *p << " ";
+		cout << "Empty vector \n";
 	}
-	cout << *p << "\n";
+	else
+	{
+		for (p--; p != v.begin(); p--)
+		{
+			cout << *p << " ";
+		}
+		cout << *p << "\n";
+	}
 	system("pause");
 
 	return 0;
