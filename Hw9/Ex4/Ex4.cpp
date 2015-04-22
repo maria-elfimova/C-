@@ -9,15 +9,15 @@ using namespace std;
 template <class T>
 class queue
 {
-	list<int> v;
+	list<T> v;
 public:
 	void push(int temp)
 	{
 		v.push_back(temp);
 	}
-	int pop()
+	T pop()
 	{
-		int temp = v.front;
+		T temp = v.front();
 		v.pop_front();
 		return temp;
 	}
@@ -28,7 +28,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	queue<int> q;
 	q.push(3); q.push(7);q.push(11);
 	cout << q.pop() << " ";   // 3
-	cout << q.pop();   // 7
+	cout << q.pop() << "\n";   // 7
 	system("pause");
 	return 0;
 }

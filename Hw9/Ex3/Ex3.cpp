@@ -10,9 +10,10 @@ using namespace std;
 
 void mysort(int n, vector<int> &v)
 {
+	auto b = pow(10, n);
 	sort(v.begin(), v.end(),
-		[](int i, int j)
-	{		auto b = pow(10, n);
+		[](int i, int j, int b)
+	{		
 	       return i % b < j % b;
 	});
 }

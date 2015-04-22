@@ -8,21 +8,20 @@
 
 using namespace std;
 
-bool mycmp(int i, int j)
+int sum(int i)
 {
-	int sumi = 0;
-	int sumj = 0;
+	int sum = 0;
 	while (i != 0)
 	{
-		sumi += (i % 10);
+		sum += (i % 10);
 		i /= 10;
 	}
-	while (j != 0)
-	{
-		sumi += (j % 10);
-		j /= 10;
-	}
-	return sumi < sumj;
+	return sum;
+}
+
+bool mycmp(int i, int j)
+{
+	return sum(i) < sum(j);
 }
 
 int _tmain(int argc, _TCHAR* argv[])

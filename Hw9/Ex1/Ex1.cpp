@@ -26,9 +26,9 @@ int _tmain(int argc, _TCHAR* argv[])
 		if (list[name] == 0);
 	}
 
-	for (auto p = list.begin(); p != list.end(); p++)
+	for (auto p : list)
 	{
-		cout << p->first << " " << p->second << "\n";
+		cout << p.first << " " << p.second << "\n";
 	}
 	system("pause");
 
